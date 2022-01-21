@@ -1,0 +1,57 @@
+@baseUrl=http://localhost:3000/users
+@resourceName=register
+
+# Products
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color=magenta
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?name_like=tasty
+
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+
+
+###
+
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+  "email": "phamkien@mail.com",
+  "password": "123123"
+}
+
+###
+
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/KkSXxPt
+Content-Type: application/json
+
+{
+  "name": "Tasty Plastic Chips Update",
+  "color": "red",
+  "price": 950
+}
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
